@@ -8,7 +8,8 @@
   <script src="js/jquery.cookie.js"></script>
   <script src="js/jquery.cookietools.js"></script>
   <script type="text/javascript">
-    userid_js = getCookie("userid");
+ //   userid_js = getCookie("userid");
+    userid_js = window.localStorage.getItem("userid");
     if (userid_js == null) {
       window.location='user.html';
     } else {

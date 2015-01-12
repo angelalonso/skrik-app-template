@@ -1,7 +1,11 @@
 function refresh_html_user(){
-  username_js = getCookie("username");
-  useremail_js = getCookie("useremail");
-  userid_js = getCookie("userid");
+
+  //username_js = getCookie("username");
+  //useremail_js = getCookie("useremail");
+  //userid_js = getCookie("userid");
+  username_js = window.localStorage.getItem("username");
+  useremail_js = window.localStorage.getItem("useremail");
+  userid_js = window.localStorage.getItem("userid");
 
   if (username_js == null ){
     username_js = "Enter your name here";
@@ -15,7 +19,8 @@ function refresh_html_user(){
   document.getElementById("username_html_user").value = username_js;
   document.getElementById("useremail_html_user").value = useremail_js;
   document.getElementById("userid_html_user").value = userid_js;
-  var dc = document.cookie;
+//  var dc = document.cookie;
+  var dc = window.localStorage;
   document.getElementById("testing_cookies").innerHTML = dc;
   var agentdc = navigator.userAgent;
   document.getElementById("testing_cookies_b").innerHTML = agentdc;
@@ -23,10 +28,11 @@ function refresh_html_user(){
 
 
 function cleanup_all(){
-  var cookies = $.cookie();
-  for(var cookie in cookies) {
-    $.removeCookie(cookie);
-  }
+  window.localStorage.clear();
+ // var cookies = $.cookie();
+ // for(var cookie in cookies) {
+ //   $.removeCookie(cookie);
+ // }
 }
 
 function getnew_userid(){
@@ -69,9 +75,12 @@ function save_userdata()
   if (userid_js == "" || userid_js == "42. If you have to ask why, you should be playing Cindy Crush instead...") {
     userid_js = getnew_userid();
   }
-  setCookie("username",username_js,18*365);
-  setCookie("useremail",useremail_js,18*365);
-  setCookie("userid",userid_js,18*365);
+  //setCookie("username",username_js,18*365);
+  //setCookie("useremail",useremail_js,18*365);
+  //setCookie("userid",userid_js,18*365);
+  window.localStorage.setItem("username",username_js);
+  window.localStorage.setItem("useremail",useremail_js);
+  window.localStorage.setItem("userid",userid_js);
   $.ajax({
     type: "POST",
     url: 'http://' + server + '/saveid/' + userid_js + '/name/' + username_js + '/email/' + useremail_js + '/',
@@ -79,9 +88,12 @@ function save_userdata()
         csrfmiddlewaretoken: '{{ csrf_token }}',
     },
     success: function(data) {
-      setCookie("username",username_js,18*365);
-      setCookie("useremail",useremail_js,18*365);
-      setCookie("userid",userid_js,18*365);
+      //setCookie("username",username_js,18*365);
+      //setCookie("useremail",useremail_js,18*365);
+      //setCookie("userid",userid_js,18*365);
+      window.localStorage.setItem("username",username_js);
+      window.localStorage.setItem("useremail",useremail_js);
+      window.localStorage.setItem("userid",userid);
     },
     error: function(xhr, textStatus, errorThrown) {
         alert("Please report this error: "+errorThrown+xhr.status+xhr.responseText);

@@ -1,11 +1,14 @@
 function refresh_html_main(){
-  username_js = getCookie("username");
+  //username_js = getCookie("username");
+  username_js = window.localStorage.getItem("username");
   document.getElementById("username_html_main").innerHTML = username_js;
-  userid_js = getCookie("userid");
+  //userid_js = getCookie("userid");
+  userid_js = window.localStorage.getItem("userid");
   pokelist(userid_js);
   document.getElementById("userlist_html_main").innerHTML = "";
   userlist(userid_js);
-  var dc = document.cookie;
+  //var dc = document.cookie;
+  var dc = window.localStorage;
   document.getElementById("testing_cookies").innerHTML = dc;
   var agentdc = navigator.appCodeName;
   document.getElementById("testing_cookies_b").innerHTML = agentdc;
@@ -76,7 +79,8 @@ function poke_to(user_from,user_to){
 }
 
 function cleanall(){
-  userid_js = getCookie("userid");
+  //userid_js = getCookie("userid");
+  userid_js = window.localStorage.getItem("userid");
   server='192.168.10.229:8000';
   $.ajax({
     type: "POST",
