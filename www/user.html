@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>{\ O /}</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />
+  <script src="js/jquery-1.8.2.min.js"></script>
+  <script src="js/jquery.mobile-1.3.0.min.js"></script>
+  <script src="js/jquery.cookie.js"></script>
+  <script src="js/jquery.cookietools.js"></script>
+  <script src="js/skrik_user.js"></script>
+  <script src="js/other_user.js"></script>
+
+<script type='text/javascript'>
+$(document).ready(function() {
+  refresh_html_user();
+});
+
+</script>
+
+</head>
+
+<body>
+<div data-role="page" id="home" data-theme="b">
+  <div data-role="header">
+    <button data-role="button" data-inset="false" data-icon="home" data-theme="a" onclick="javascript:window.location='index.html'" >Home</button>
+    <h1>User Config</h1>
+  </div>
+  <div data-role="content">
+    <div data-role="fieldcontain">
+      <label for="username_html_user">NAME:</label>
+      <input type="text" name="username_html" id="username_html_user" value="Enter your name here" onclick="javascript:if($(this).val() == 'Enter your name here') {$(this).val('');} return false;" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="useremail_html_user">E-MAIL:</label>
+      <input type="text" name="useremail_html_user" id="useremail_html_user" value="Enter your e-Mail here" onclick="javascript:if($(this).val() == 'Enter your e-Mail here') {$(this).val('');} return false;" />
+    </div>
+    <div data-role="fieldcontain">
+      <label for="userid_html_user">ID:</label>
+      <input type="text" name="userid_html_user" id="userid_html_user" disabled="true" />
+    </div>
+    <button data-role="button" data-inset="false" data-theme="b" data-icon="check" onclick="javascript:save_userdata();refresh_html_user();window.location='index.html';" >LOG ME IN!</button>
+    <button data-role="button" data-inset="false" data-theme="b" data-icon="delete" onclick="javascript:cleanup_all();refresh_html_user();" >LOG ME OUT!</button>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <a href="#">&copy; {\ O /}, test 1</a>
+    <div id="testing_cookies">None</div>
+    <div id="testing_cookies_b">None</div>
+  </div>
+</div>
+
+
+</body>
+</html>
