@@ -16,6 +16,15 @@
 /home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/phonegap/helloworld/R.class \
 /home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/phonegap/helloworld/R$xml.class \
 /home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/phonegap/helloworld/R$attr.class \
+/home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/skrik/test/R$string.class \
+/home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/skrik/test/Manifest$permission.class \
+/home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/skrik/test/HelloWorld.class \
+/home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/skrik/test/Manifest.class \
+/home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/skrik/test/BuildConfig.class \
+/home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/skrik/test/R$drawable.class \
+/home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/skrik/test/R.class \
+/home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/skrik/test/R$xml.class \
+/home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/skrik/test/R$attr.class \
 /home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/plugin/gcm/CordovaGCMBroadcastReceiver.class \
 /home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/plugin/gcm/PushHandlerActivity.class \
 /home/aaf/Dev/skrik/app/platforms/android/ant-build/classes/com/plugin/gcm/GCMIntentService.class \

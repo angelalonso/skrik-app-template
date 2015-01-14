@@ -49,6 +49,7 @@
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/plugins/org.apache.cordova.media/www/Media.js \
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/plugins/com.phonegap.plugins.PushPlugin/www \
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js \
+/home/aaf/Dev/skrik/app/platforms/android/assets/www/js/index.js_old \
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/js/jquery.cookie.js \
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/js/other_main.js \
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/js/jquery-1.8.2.min.js \
