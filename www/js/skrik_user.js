@@ -65,8 +65,8 @@ function save_userdata()
   server='192.168.10.229:8000';
   username_js = document.getElementById("username_html_user").value;
   useremail_js = document.getElementById("useremail_html_user").value;
-  userid_js = document.getElementById("userid_html_user").value;
-  regid_js = document.getElementById("regid_html_user").value;
+  userid_js = window.localStorage.getItem("userid");
+  regid_js = window.localStorage.getItem("regid");
   if (username_js == "Enter your name here" || username_js == "") {
     username_js = "Anonymous_I_guess";
   }
@@ -82,10 +82,10 @@ function save_userdata()
   window.localStorage.setItem("username",username_js);
   window.localStorage.setItem("useremail",useremail_js);
   window.localStorage.setItem("userid",userid_js);
-  window.localStorage.setItem("regid",regid_js);
+  //window.localStorage.setItem("regid",regid_js);
   $.ajax({
     type: "POST",
-    url: 'http://' + server + '/saveid/' + userid_js + '/name/' + username_js + '/email/' + useremail_js + '/',
+    url: 'http://' + server + '/saveid/' + userid_js + '/name/' + username_js + '/email/' + useremail_js + '/regid/' + regid_js + '/',
     data: {
         csrfmiddlewaretoken: '{{ csrf_token }}',
     },
@@ -96,7 +96,7 @@ function save_userdata()
       window.localStorage.setItem("username",username_js);
       window.localStorage.setItem("useremail",useremail_js);
       window.localStorage.setItem("userid",userid_js);
-      window.localStorage.setItem("regid",regid_js);
+      //window.localStorage.setItem("regid",regid_js);
     },
     error: function(xhr, textStatus, errorThrown) {
         alert("Please report this error: "+errorThrown+xhr.status+xhr.responseText);
