@@ -1,5 +1,4 @@
 var pushNotification;
-window.localStorage.setItem("regid","empty");
 
 
 function onDeviceReady() 
@@ -79,7 +78,7 @@ function onNotificationGCM(e)
 // here is where you might want to send it the regID for later use.
         window.localStorage.setItem("regid",e.regid);
         //console.log("regID = " + e.regID);
-        alert(e.regid);
+        //alert(e.regid);
        }
        break;
      case 'message':
