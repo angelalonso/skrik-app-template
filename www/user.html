@@ -18,10 +18,11 @@ if(!$.browser.mozilla && !$.browser.chrome)
     {
       jQuery.getScript("cordova.js");
       jQuery.getScript("js/PushNotification.js");
+      jQuery.getScript("js/skrik_pushfuncs.js");
       alert(regid_js);
       //window.localStorage.setItem("regid","browser");
-      regid_js = window.localStorage.getItem("regid"); 
-      alert(regid_js);
+      //regid_js = window.localStorage.getItem("regid"); 
+      //alert(regid_js);
     }
 
 $(document).ready(function() {
