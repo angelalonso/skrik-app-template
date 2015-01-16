@@ -8,6 +8,9 @@
 <!--  <script src="js/jquery.cookie.js"></script>
   <script src="js/jquery.cookietools.js"></script>
 -->
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/PushNotification.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/skrik_pushfuncs.js"></script>
   <script src="js/skrik_user.js"></script>
   <script src="js/other_user.js"></script>
   <script src="js/index.js"></script>
@@ -16,12 +19,13 @@
 
 if(!$.browser.mozilla && !$.browser.chrome)
     {
-      jQuery.getScript("cordova.js");
-      jQuery.getScript("js/PushNotification.js");
+//      jQuery.getScript("cordova.js");
+ //     jQuery.getScript("js/PushNotification.js");
+   //   jQuery.getScript("js/skrik_pushfuncs.js");
       alert(regid_js);
       //window.localStorage.setItem("regid","browser");
-      regid_js = window.localStorage.getItem("regid"); 
-      alert(regid_js);
+      //regid_js = window.localStorage.getItem("regid"); 
+      //alert(regid_js);
     }
 
 $(document).ready(function() {
@@ -62,7 +66,7 @@ $(document).ready(function() {
     <button data-role="button" data-inset="false" data-theme="b" data-icon="delete" onclick="javascript:cleanup_all();refresh_html_user();" >LOG ME OUT!</button>
   </div>
   <div data-role="footer" data-position="fixed">
-    <a href="#">&copy; {\ O /}, test LS</a>
+    <a href="#">&copy; {\ O /}, test NOWWWWWW</a>
     <div id="testing_cookies">None</div>
   </div>
 </div>
