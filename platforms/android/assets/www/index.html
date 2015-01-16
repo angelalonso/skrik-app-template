@@ -15,14 +15,13 @@
     { 
       window.localStorage.setItem("regid","browser");
     } else {
-      jQuery.getScript("js/PushNotification.js");
       jQuery.getScript("cordova.js");
+      jQuery.getScript("js/PushNotification.js");
       jQuery.getScript("js/skrik_pushfuncs.js");
     } 
 
     userid_js = window.localStorage.getItem("userid");
     regid_js = window.localStorage.getItem("regid");
-    alert(regid_js);
 
     if (userid_js == null) {
       window.location='user.html';
