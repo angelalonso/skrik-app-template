@@ -60,6 +60,7 @@
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/js/skrik_pushfuncs.js \
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/js/PushNotification.js \
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/js/jquery.mobile-1.3.0.min.js \
+/home/aaf/Dev/skrik/app/platforms/android/assets/www/js/skrik_pushfuncs_old.js \
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/js/index.js \
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/img/logo.png \
 /home/aaf/Dev/skrik/app/platforms/android/assets/www/css/index.css \
