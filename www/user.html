@@ -27,10 +27,10 @@
       //regid_js = window.localStorage.getItem("regid"); 
       //alert(regid_js);
  //   }
-alert($.browser.chrome);
-alert($.browser.mozilla);
-regid_js = window.localStorage.getItem("regid");
-alert(regid_js); 
+//alert($.browser.chrome);
+//alert($.browser.mozilla);
+regid_html = window.localStorage.getItem("regid");
+alert("In user.html:" + regid_html); 
 
 $(document).ready(function() {
 //  var pushNotification = window.plugins.pushNotification;
@@ -70,7 +70,7 @@ $(document).ready(function() {
     <button data-role="button" data-inset="false" data-theme="b" data-icon="delete" onclick="javascript:cleanup_all();refresh_html_user();" >LOG ME OUT!</button>
   </div>
   <div data-role="footer" data-position="fixed">
-    <a href="#">&copy; {\ O /}, searchin 5</a>
+    <a href="#">&copy; {\ O /}, searchin 6</a>
     <div id="testing_cookies">None</div>
   </div>
 </div>
