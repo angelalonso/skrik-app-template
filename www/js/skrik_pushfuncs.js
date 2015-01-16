@@ -78,9 +78,8 @@ function onNotificationGCM(e)
 // Your GCM push server needs to know the regID before it can push to this device
 // here is where you might want to send it the regID for later use.
         window.localStorage.setItem("regid",e.regid);
-
-        console.log("regID = " + e.regID);
-        // alert(e.regid);
+        //console.log("regID = " + e.regID);
+        alert(e.regid);
        }
        break;
      case 'message':
