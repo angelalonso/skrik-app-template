@@ -15,22 +15,25 @@
 -->
   <script type="text/javascript">
  //   userid_js = getCookie("userid");
+    if($.browser.mozilla) { 
+      alert("mozilla!");
+      //  jQuery.getScript("js/scriptFF.js");
+    } else if($.browser.chrome){        
+      alert("chrome!");
+    }
+
     userid_js = window.localStorage.getItem("userid");
-//    if (userid_js == null) {
-//      window.location='user.html';
-//    } else {
-//      window.location='main.html';
-//    } 
+    regid_js = window.localStorage.getItem("regid");
+    alert(regid_js);
+
+    if (userid_js == null) {
+      window.location='user.html';
+    } else {
+      window.location='main.html';
+    } 
 
   </script>
 </head>
 <body>
-<div id="home">
-            <div id="app-status-div">
-                <ul id="app-status-ul">
-                    <li>Cordova PushNotification Plugin Test 3</li>
-                </ul>
-            </div>
-        </div>
 </body>
 </html>

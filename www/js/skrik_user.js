@@ -6,6 +6,7 @@ function refresh_html_user(){
   username_js = window.localStorage.getItem("username");
   useremail_js = window.localStorage.getItem("useremail");
   userid_js = window.localStorage.getItem("userid");
+  regid_js = window.localStorage.getItem("regid");
 
   if (username_js == null ){
     username_js = "Enter your name here";
@@ -19,11 +20,10 @@ function refresh_html_user(){
   document.getElementById("username_html_user").value = username_js;
   document.getElementById("useremail_html_user").value = useremail_js;
   document.getElementById("userid_html_user").value = userid_js;
+  document.getElementById("regid_html_user").value = regid_js;
 //  var dc = document.cookie;
   var dc = window.localStorage;
   document.getElementById("testing_cookies").innerHTML = dc;
-  var agentdc = navigator.userAgent;
-  document.getElementById("testing_cookies_b").innerHTML = agentdc;
 }
 
 
@@ -66,6 +66,7 @@ function save_userdata()
   username_js = document.getElementById("username_html_user").value;
   useremail_js = document.getElementById("useremail_html_user").value;
   userid_js = document.getElementById("userid_html_user").value;
+  regid_js = document.getElementById("regid_html_user").value;
   if (username_js == "Enter your name here" || username_js == "") {
     username_js = "Anonymous_I_guess";
   }
@@ -81,6 +82,7 @@ function save_userdata()
   window.localStorage.setItem("username",username_js);
   window.localStorage.setItem("useremail",useremail_js);
   window.localStorage.setItem("userid",userid_js);
+  window.localStorage.setItem("regid",regid_js);
   $.ajax({
     type: "POST",
     url: 'http://' + server + '/saveid/' + userid_js + '/name/' + username_js + '/email/' + useremail_js + '/',
@@ -93,7 +95,8 @@ function save_userdata()
       //setCookie("userid",userid_js,18*365);
       window.localStorage.setItem("username",username_js);
       window.localStorage.setItem("useremail",useremail_js);
-      window.localStorage.setItem("userid",userid);
+      window.localStorage.setItem("userid",userid_js);
+      window.localStorage.setItem("regid",regid_js);
     },
     error: function(xhr, textStatus, errorThrown) {
         alert("Please report this error: "+errorThrown+xhr.status+xhr.responseText);

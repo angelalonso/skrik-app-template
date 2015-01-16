@@ -5,6 +5,7 @@ function refresh_html_user(){
   //userid_js = getCookie("userid");
   username_js = window.localStorage.getItem("username");
   useremail_js = window.localStorage.getItem("useremail");
+  regid_js = window.localStorage.getItem("regid");
   userid_js = window.localStorage.getItem("userid");
 
   if (username_js == null ){
