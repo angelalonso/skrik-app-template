@@ -1,5 +1,5 @@
 function refresh_html_user(){
-  alert("refresh");
+  //alert("refresh");
   //username_js = getCookie("username");
   //useremail_js = getCookie("useremail");
   //userid_js = getCookie("userid");
@@ -26,11 +26,11 @@ function refresh_html_user(){
 
 function check_userid(){
   current_userid = document.getElementById("userid_html_user").value;
-  alert("HTML: " + current_userid);
+  //alert("HTML: " + current_userid);
   if (current_userid == "null" || current_userid == "" || current_userid == "99999999999999")
   {
     current_userid = window.localStorage.getItem("userid");
-    alert("LS: " + current_userid);
+    //alert("LS: " + current_userid);
     if (current_userid == "null" || current_userid == "" || current_userid == "99999999999999")
     {
       getnew_userid();  
@@ -44,7 +44,7 @@ function check_userid(){
 
 
 function cleanup_all(){
-  alert("clean up");
+  //alert("clean up");
   regid_aux = window.localStorage.getItem("regid");
   window.localStorage.clear();
   window.localStorage.setItem("regid",regid_aux);
@@ -55,7 +55,7 @@ function cleanup_all(){
 }
 
 function getnew_userid(){
-  alert("new id");
+  //alert("new id");
   data = "";
   server='192.168.10.229:8000';
   $.ajax({
@@ -90,7 +90,7 @@ function save_userdata()
   server='192.168.10.229:8000';
   username_js = document.getElementById("username_html_user").value;
   useremail_js = document.getElementById("useremail_html_user").value;
-  userid_js = window.localStorage.getItem("userid");
+  userid_js = document.getElementById("userid_html_user").value;
   regid_js = window.localStorage.getItem("regid");
   if (username_js == "Enter your name here" || username_js == "") 
   {
@@ -100,7 +100,7 @@ function save_userdata()
   {
     useremail_js = "shy@i.am";
   }
-  if (userid_js == "" || userid_js == "42. If you have to ask why, you should be playing Cindy Crush instead...") 
+  if (userid_js == "" || userid_js == "42. If you have to ask why, you should be playing Cindy Crush instead..." || userid_js == "99999999999999" || userid_js == "null") 
   {
     userid_js = getnew_userid();
   }
