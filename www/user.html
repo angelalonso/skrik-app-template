@@ -10,16 +10,20 @@
 
 <script type='text/javascript'>
 
-if(!$.browser.mozilla && !$.browser.chrome)
+  if(!$.browser.mozilla && !$.browser.chrome)
     {
       jQuery.getScript("cordova.js");
       jQuery.getScript("js/PushNotification.js");
       jQuery.getScript("js/skrik_pushfuncs.js");
+    } else
+    {
+      window.localStorage.setItem("regid","not_android");
     }
 regid_html = window.localStorage.getItem("regid");
 alert("In user.html:" + regid_html); 
 
 $(document).ready(function() {
+  alert("on ready");
   refresh_html_user();
 });
 
@@ -50,11 +54,11 @@ $(document).ready(function() {
       <label for="regid_html_user">DEVICE ID:</label>
       <input type="text" name="regid_html_user" id="regid_html_user" disabled="true" />
     </div>
-    <button data-role="button" data-inset="false" data-theme="b" data-icon="check" onclick="javascript:save_userdata();refresh_html_user();window.location='index.html';" >LOG ME IN!</button>
-    <button data-role="button" data-inset="false" data-theme="b" data-icon="delete" onclick="javascript:cleanup_all();refresh_html_user();" >LOG ME OUT!</button>
+    <button data-role="button" data-inset="false" data-theme="b" data-icon="check" onclick="javascript:check_userid();refresh_html_user();save_userdata();window.location='index.html';" >LOG ME IN!</button>
+    <button data-role="button" data-inset="false" data-theme="b" data-icon="delete" onclick="javascript:cleanup_all();getnew_userid();refresh_html_user();" >LOG ME OUT!</button>
   </div>
   <div data-role="footer" data-position="fixed">
-    <a href="#">&copy; {\ O /}, regid-MySQL 1</a>
+    <a href="#">&copy; {\ O /}, ID checks 1</a>
     <div id="testing_cookies">None</div>
   </div>
 </div>
