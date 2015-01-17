@@ -1,5 +1,5 @@
 function refresh_html_user(){
-
+  alert("refresh");
   //username_js = getCookie("username");
   //useremail_js = getCookie("useremail");
   //userid_js = getCookie("userid");
@@ -14,21 +14,40 @@ function refresh_html_user(){
   if (useremail_js == null ){
     useremail_js = "Enter your e-Mail here";
   }
-  if (userid_js == null || userid_js == "undefined" ){
-    userid_js = getnew_userid();
-  }
+  check_userid()
   document.getElementById("username_html_user").value = username_js;
   document.getElementById("useremail_html_user").value = useremail_js;
-  document.getElementById("userid_html_user").value = userid_js;
+  //document.getElementById("userid_html_user").value = userid_js;
   document.getElementById("regid_html_user").value = regid_js;
 //  var dc = document.cookie;
   var dc = window.localStorage;
   document.getElementById("testing_cookies").innerHTML = dc;
 }
 
+function check_userid(){
+  current_userid = document.getElementById("userid_html_user").value;
+  alert("HTML: " + current_userid);
+  if (current_userid == "null" || current_userid == "" || current_userid == "99999999999999")
+  {
+    current_userid = window.localStorage.getItem("userid");
+    alert("LS: " + current_userid);
+    if (current_userid == "null" || current_userid == "" || current_userid == "99999999999999")
+    {
+      getnew_userid();  
+    } else 
+    {
+      document.getElementById("userid_html_user").value = current_userid;
+      refresh_html_user()
+    }
+  }
+}
+
 
 function cleanup_all(){
+  alert("clean up");
+  regid_aux = window.localStorage.getItem("regid");
   window.localStorage.clear();
+  window.localStorage.setItem("regid",regid_aux);
  // var cookies = $.cookie();
  // for(var cookie in cookies) {
  //   $.removeCookie(cookie);
@@ -36,6 +55,7 @@ function cleanup_all(){
 }
 
 function getnew_userid(){
+  alert("new id");
   data = "";
   server='192.168.10.229:8000';
   $.ajax({
@@ -53,9 +73,14 @@ function getnew_userid(){
     }
   });
   try {
-    return userid_ajax;
+    document.getElementById("userid_html_user").value = userid_ajax;
+    window.localStorage.setItem("userid",userid_ajax);
+    //return userid_ajax;
   } catch(e) {
-    return "42. If you have to ask why, you should be playing Cindy Crush instead...";
+    //return "42. If you have to ask why, you should be playing Cindy Crush instead...";
+    error_user="99999999999999"
+    document.getElementById("userid_html_user").value = error_user;
+    window.localStorage.setItem("userid",error_user);
   }
 }
 
@@ -67,13 +92,16 @@ function save_userdata()
   useremail_js = document.getElementById("useremail_html_user").value;
   userid_js = window.localStorage.getItem("userid");
   regid_js = window.localStorage.getItem("regid");
-  if (username_js == "Enter your name here" || username_js == "") {
+  if (username_js == "Enter your name here" || username_js == "") 
+  {
     username_js = "Anonymous_I_guess";
   }
-  if (useremail_js == "Enter your e-Mail here" || username_js == "") {
+  if (useremail_js == "Enter your e-Mail here" || username_js == "") 
+  {
     useremail_js = "shy@i.am";
   }
-  if (userid_js == "" || userid_js == "42. If you have to ask why, you should be playing Cindy Crush instead...") {
+  if (userid_js == "" || userid_js == "42. If you have to ask why, you should be playing Cindy Crush instead...") 
+  {
     userid_js = getnew_userid();
   }
   //setCookie("username",username_js,18*365);
